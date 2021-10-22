@@ -19,7 +19,24 @@ resource "helm_release" "vault" {
     ]
 
     set {
-    server.ha.enabled = true
-    server.ha.raft.enabled= true
-  }
+        name = server.ha.enabled
+        value = true
+    }
+
+    set{
+        name = server.ha.raft.enabled
+        value = true
+    }
+
+    set{
+        name = ui.enabled
+        value = true
+    }
+
+    set{
+        name = ui.serviceType
+        value = true
+    }
+
+
 }
